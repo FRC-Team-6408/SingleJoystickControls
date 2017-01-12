@@ -25,15 +25,15 @@ public class DriveTrain extends Subsystem {
         // Set the default command for a subsystem here.
     }
     
-    public void driveDirection (double ySpeed, double turnSpeed, double xSpeed)
+    public void driveDirection (double ySpeed, double turnSpeed, double xSpeed, double throttle)
     {
     	// Uses x, y, and z axis of the joystick to turn the robot.
     	// Z turns the robot in that direction, x turns the robot's wheels on both sides, y moves the robot forwards or backwards. 
     	if(turnSpeed < 0) {
-    		drive.setLeftRightMotorOutputs(ySpeed - (xSpeed / 2), ySpeed - turnSpeed + (xSpeed / 2)); 
+    		drive.setLeftRightMotorOutputs((ySpeed - (xSpeed / 2)) * throttle, (ySpeed - turnSpeed + (xSpeed / 2))* throttle); 
     	}
     	else {
-    		drive.setLeftRightMotorOutputs(ySpeed + turnSpeed - (xSpeed / 2), ySpeed + (xSpeed / 2));
+    		drive.setLeftRightMotorOutputs((ySpeed + turnSpeed - (xSpeed / 2)) * throttle, (ySpeed + (xSpeed / 2)) * throttle);
     	}
     	
     }
