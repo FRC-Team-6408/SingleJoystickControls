@@ -83,7 +83,12 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         driveTrain.driveDirection(-oi.getJoystick1().getY(), -oi.getJoystick1().getTwist(), -oi.getJoystick1().getX(), oi.getJoystick1().getRawAxis(3)/2 + 0.5);
-        //raw axis goes from 0-4, throtle is 4, should work? please test.
+        //raw axis goes from 0-4, throtle is 4, should work?
+        oi.button0.whenPressed(new MoveSpeed(0));
+        oi.button1.whenPressed(new MoveSpeed(1));
+        oi.button2.whenPressed(new MoveSpeed(2));
+        oi.button3.whenPressed(new MoveSpeed(3));
+        oi.button4.whenPressed(new MoveSpeed(4));
     }
 
     /**

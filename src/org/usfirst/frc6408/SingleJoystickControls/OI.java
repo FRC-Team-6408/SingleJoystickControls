@@ -13,6 +13,8 @@ package org.usfirst.frc6408.SingleJoystickControls;
 import org.usfirst.frc6408.SingleJoystickControls.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 import org.usfirst.frc6408.SingleJoystickControls.subsystems.*;
 
 /**
@@ -47,8 +49,20 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
     public Joystick joystick1;
+    public JoystickButton button0;
+    public JoystickButton button1;
+    public JoystickButton button2;
+    public JoystickButton button3;
+    public JoystickButton button4;
+    public JoystickButton button5;
     public OI() {
         joystick1 = new Joystick(0);
+        button0 = new JoystickButton(joystick1, 11);
+        button1 = new JoystickButton(joystick1, 9);
+        button2 = new JoystickButton(joystick1, 7);
+        button3 = new JoystickButton(joystick1, 12);
+        button4 = new JoystickButton(joystick1, 10);
+        button5 = new JoystickButton(joystick1, 8); //not being used.
         
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
