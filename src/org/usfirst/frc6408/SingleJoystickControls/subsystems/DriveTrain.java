@@ -33,10 +33,10 @@ public class DriveTrain extends Subsystem {
     	// Z turns the robot in that direction, x turns the robot's wheels on both sides, y moves the robot forwards or backwards. 
     	if(turnSpeed < 0) {
     		drive.setLeftRightMotorOutputs((ySpeed - (xSpeed / 2)) * throttle * (speedLevel / 4), 
-    										(ySpeed - turnSpeed + (xSpeed / 2)) * throttle* (speedLevel / 4)); 
+    										(ySpeed + turnSpeed + (xSpeed / 2)) * throttle* (speedLevel / 4)); 
     	}
     	else {
-    		drive.setLeftRightMotorOutputs((ySpeed + turnSpeed - (xSpeed / 2)) * throttle* (speedLevel / 4),
+    		drive.setLeftRightMotorOutputs((ySpeed - turnSpeed - (xSpeed / 2)) * throttle* (speedLevel / 4),
     										(ySpeed + (xSpeed / 2)) * throttle * (speedLevel / 4));
     	}
     	
