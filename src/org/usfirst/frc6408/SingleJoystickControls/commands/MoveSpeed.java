@@ -10,12 +10,8 @@ import org.usfirst.frc6408.SingleJoystickControls.subsystems.*;
  */
 public class MoveSpeed extends Command {
 
-	int speed;
-    public MoveSpeed(int speed1To4) 
+    public MoveSpeed() 
     {
-    	speed = speed1To4;
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
@@ -24,7 +20,6 @@ public class MoveSpeed extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.speedLevel = speed;
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -48,28 +48,20 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-    public Joystick joystick1;
-    public JoystickButton button0;
-    public JoystickButton button1;
-    public JoystickButton button2;
-    public JoystickButton button3;
-    public JoystickButton button4;
-    public JoystickButton button5;
+	
+    public Joystick joystickMain;
+    public Joystick joystickSecond;
+    public JoystickButton buttonAWinch;
+    public JoystickButton buttonLBumperSpeedDown;
+    public JoystickButton buttonRBumperSpeedUp;
+    
     public OI() {
-        joystick1 = new Joystick(0);
-        button0 = new JoystickButton(joystick1, 11);
-        button1 = new JoystickButton(joystick1, 9);
-        button2 = new JoystickButton(joystick1, 7);
-        button3 = new JoystickButton(joystick1, 12);
-        button4 = new JoystickButton(joystick1, 10);
-        button5 = new JoystickButton(joystick1, 8); //not being used.
-        
-        // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
+    	joystickMain = new Joystick(0);
+    	joystickSecond = new Joystick(1);
+        buttonAWinch = new JoystickButton(joystickMain, 1);
+        buttonLBumperSpeedDown = new JoystickButton(joystickMain, 5);
+        buttonRBumperSpeedUp = new JoystickButton(joystickMain, 6);
     }
     
-    public Joystick getJoystick1() {
-        return joystick1;
-    }
 }
 

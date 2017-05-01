@@ -18,28 +18,10 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 
 public class DriveTrain extends Subsystem {
-	public float speedLevel = 4; //1 == 25%, 2 == 50%, 3 == 75%, 4 == 100%
 	private RobotDrive drive = new RobotDrive(0, 1, 2, 3);
 
-    public void initDefaultCommand() 
-    {
-        // Set the default command for a subsystem here.
+    public void initDefaultCommand() {
     }
-    
-    public void driveDirection (double ySpeed, double turnSpeed, double xSpeed, double throttle)
-    {
-    	// SpeedLevel adds extra speed controll.
-    	// Uses x, y, and z axis of the joystick to turn the robot.
-    	// Z turns the robot in that direction, x turns the robot's wheels on both sides, y moves the robot forwards or backwards. 
-    	if(turnSpeed < 0) {
-    		drive.setLeftRightMotorOutputs((ySpeed - (xSpeed / 2)) * throttle * (speedLevel / 4), 
-    										(ySpeed + turnSpeed + (xSpeed / 2)) * throttle* (speedLevel / 4)); 
-    	}
-    	else {
-    		drive.setLeftRightMotorOutputs((ySpeed - turnSpeed - (xSpeed / 2)) * throttle* (speedLevel / 4),
-    										(ySpeed + (xSpeed / 2)) * throttle * (speedLevel / 4));
-    	}
-    	
-    }
+   
 }
 
